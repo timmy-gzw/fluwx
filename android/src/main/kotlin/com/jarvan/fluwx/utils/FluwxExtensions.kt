@@ -14,7 +14,7 @@ internal const val KEY_FLUWX_REQUEST_INFO_BUNDLE = "KEY_FLUWX_REQUEST_INFO_BUNDL
 internal const val KEY_FLUWX_EXTRA = "KEY_FLUWX_EXTRA"
 internal const val FLAG_PAYLOAD_FROM_WECHAT = "FLAG_PAYLOAD_FROM_WECHAT"
 
-internal fun Activity.startFlutterActivity(
+fun Activity.startFlutterActivity(
     extra: Intent,
 ) {
     flutterActivityIntent()?.also { intent ->
@@ -31,7 +31,7 @@ internal fun Activity.startFlutterActivity(
 }
 
 
-internal fun Context.flutterActivityIntent(): Intent? {
+fun Context.flutterActivityIntent(): Intent? {
     return if (FluwxConfigurations.flutterActivity.isBlank()) {
         packageManager.getLaunchIntentForPackage(packageName)
     } else {
